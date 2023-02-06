@@ -1,12 +1,14 @@
-import './App.css';
-import Header from './Components/Header'
-import AllReviews from './Components/AllReviews'
+import "./App.css";
+import Header from "./Components/Header";
+import AllReviews from "./Components/AllReviews";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <AllReviews />
+      <Routes>
+        <Route path="/" element={<section><Header /><AllReviews /></section>}> </Route>
+      </Routes>
     </div>
   );
 }

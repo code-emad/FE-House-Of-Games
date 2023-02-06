@@ -1,7 +1,3 @@
-export default function Header () {
-
-
-    return (
-        <h1>House of Games</h1>
-    )
+export default function Header() {
+  return <h1>House of Games</h1>;
 }
