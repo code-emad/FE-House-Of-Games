@@ -11,7 +11,7 @@ export default function ReviewCards({ reviews }) {
               User: {review.owner} @{" "}
               {review.created_at.slice(0, 16).replace("T", " ")}
             </p>
-            <img src={review.review_img_url} height="100px" />
+            <img src={review.review_img_url} alt="pic_of_game" height="100px" />
             <p>Review: {review.review_body}</p>
             <p>Designer: {review.designer}</p>
             <p>Category: {review.category}</p>
