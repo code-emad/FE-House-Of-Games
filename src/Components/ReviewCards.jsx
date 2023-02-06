@@ -1,4 +1,4 @@
-export default function ReviewCard({ reviews }) {
+export default function ReviewCards({ reviews }) {
   return (
     <ul>
       {reviews.map((review) => {
