@@ -1,16 +1,16 @@
 import axios from "axios";
 
-export const getReviewById = (reviewId) => {
+export const getReviews = () => {
   return axios
-    .get(`https://emads-be-project.onrender.com/api/reviews/${reviewId}`)
+    .get("https://emads-be-project.onrender.com/api/reviews/")
     .then(({ data }) => {
       return data;
     });
 };
 
-export const getReviews = () => {
+export const getReviewById = (review_id) => {
   return axios
-    .get("https://emads-be-project.onrender.com/api/reviews/")
+    .get(`https://emads-be-project.onrender.com/api/reviews/${review_id}`)
     .then(({ data }) => {
       return data;
     });

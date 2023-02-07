@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getReviewById } from "../Utils/api";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function SingleReview() {
   const navigate = useNavigate();
@@ -9,11 +10,19 @@ export default function SingleReview() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/review/${searchedId}`);
     getReviewById(searchedId).then((review) => {
       setReview(review);
     });
+    navigate(`/review/${searchedId}`);
   };
+
+  const { review_id } = useParams();
+  useEffect(() => {
+    if (review_id)
+      getReviewById(review_id).then((review) => {
+        setReview(review);
+      });
+  }, []);
 
   const searchedReview = !review.hasOwnProperty("review_body") ? (<p></p>) 
   : (

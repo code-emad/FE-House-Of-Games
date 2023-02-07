@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import AllReviews from "./Components/AllReviews";
 import SingleReview from "./Components/SingleReview";
+import Comments from "./Components/Comments";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<section><AllReviews /></section>}> </Route>
         <Route path="/review/" element={<section><SingleReview /></section>}></Route>
         <Route path="/review/:review_id" element={<section><SingleReview /></section>}></Route>
+        <Route path="/test" element={<Comments/>}></Route>
       </Routes>
     </div>
   );

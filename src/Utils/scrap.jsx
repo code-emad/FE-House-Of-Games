@@ -16,4 +16,8 @@ User: {review.owner} @{" "}
 <button>-</button>
 </section>)
 
-//dfsdfs
+
+<p>Review: {review.review_body}</p>
+<p>Designer: {review.designer}</p>
+         <p>Designer: {review.designer}</p>
+
