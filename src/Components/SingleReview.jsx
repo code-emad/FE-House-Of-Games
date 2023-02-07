@@ -7,6 +7,7 @@ export default function SingleReview() {
   const navigate = useNavigate();
   const [searchedId, setSearchedId] = useState("");
   const [review, setReview] = useState({});
+  const { review_id } = useParams();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +17,6 @@ export default function SingleReview() {
     navigate(`/review/${searchedId}`);
   };
 
-  const { review_id } = useParams();
   useEffect(() => {
     if (review_id)
       getReviewById(review_id).then((review) => {
