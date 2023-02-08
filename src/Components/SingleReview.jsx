@@ -18,7 +18,7 @@ export default function SingleReview() {
 
   const searchedReview = !review.hasOwnProperty("review_body") ? (<p></p>) 
   : (
-    <section>
+    <section className="singleReview">
       <h3>
         {review.review_id}. {review.title}
       </h3>
@@ -39,7 +39,7 @@ export default function SingleReview() {
 
   return (
     <section>
-      <h2>Single Review</h2>
+      <h2 className="singleReviewTitle">Single Review</h2>
       {searchedReview}
       <Comments review_id={review_id}/>
     </section>

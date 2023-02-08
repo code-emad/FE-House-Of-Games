@@ -58,4 +58,30 @@
   mask-repeat: no-repeat;
 }
 
+.allReviewsTitle {
+  text-align: left;
+  padding: 1rem;
+  margin: 5px
+}
 
+li {
+  text-align: left;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+.singleReviewTitle {
+  text-align: left;
+  padding: 1rem;
+  margin: 5px
+}
+
+.singleReview {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.commentsTitle {
+  text-decoration: underline;
+  padding-bottom: 20px;
+}

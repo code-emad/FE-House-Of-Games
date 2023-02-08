@@ -12,7 +12,7 @@ export default function Comments({review_id}) {
 
   return (
   <section>
-  <h3>Comments</h3>
+  <h3 className="commentsTitle">Comments</h3>
     <ul>{comments.map((comment) => {
       return (
         <li key={comment.comment_id}>
