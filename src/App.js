@@ -11,7 +11,7 @@ import Comments from "./Components/Comments";
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header className="title"/>
       <Routes>
         <Route path="/" element={<section><AllReviews /></section>}> </Route>
         <Route path="/review/" element={<section><SingleReview /></section>}></Route>
