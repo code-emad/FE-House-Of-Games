@@ -5,17 +5,8 @@ import { useParams } from "react-router-dom";
 
 export default function SingleReview() {
   const navigate = useNavigate();
-  const [searchedId, setSearchedId] = useState("");
   const [review, setReview] = useState({});
   const { review_id } = useParams();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    getReviewById(searchedId).then((review) => {
-      setReview(review);
-    });
-    navigate(`/review/${searchedId}`);
-  };
 
   useEffect(() => {
     if (review_id)
@@ -48,15 +39,6 @@ export default function SingleReview() {
   return (
     <section>
       <h2>Single Review</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Insert review ID</label>
-        <input
-          type="number"
-          value={searchedId}
-          onChange={(e) => setSearchedId(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
       {searchedReview}
     </section>
   );

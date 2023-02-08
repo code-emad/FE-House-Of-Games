@@ -14,7 +14,6 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<section><AllReviews /></section>}> </Route>
-        <Route path="/review/" element={<section><SingleReview /></section>}></Route>
         <Route path="/review/:review_id" element={<section><SingleReview /></section>}></Route>
         <Route path="/test" element={<Comments/>}></Route>
       </Routes>
