@@ -39,7 +39,11 @@ export default function SingleReview() {
 
   return (
     <section>
+
       <h2 className="singleReviewTitle">Single Review</h2>
+
+      <h2>Single Review</h2>
+
       {searchedReview}
       <Comments review_id={review_id}/>
     </section>

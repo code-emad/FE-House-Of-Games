@@ -16,6 +16,7 @@ export const getReviewById = (review_id) => {
     });
 };
 
+
 export const getCommentsById = (review_id) => {
   return axios
     .get(`https://emads-be-project.onrender.com/api/reviews/${review_id}/comments`)
@@ -23,3 +24,4 @@ export const getCommentsById = (review_id) => {
       return data
     })
 }
+
