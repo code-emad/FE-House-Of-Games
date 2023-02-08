@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getReviewById } from "../Utils/api";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Comments from './Comments'
 
 export default function SingleReview() {
   const navigate = useNavigate();
@@ -13,11 +14,11 @@ export default function SingleReview() {
       getReviewById(review_id).then((review) => {
         setReview(review);
       });
-  }, []);
+  }, [review_id]);
 
   const searchedReview = !review.hasOwnProperty("review_body") ? (<p></p>) 
   : (
-    <section>
+    <section className="singleReview">
       <h3>
         {review.review_id}. {review.title}
       </h3>
@@ -38,8 +39,14 @@ export default function SingleReview() {
 
   return (
     <section>
+
+      <h2 className="singleReviewTitle">Single Review</h2>
+
       <h2>Single Review</h2>
+
       {searchedReview}
+      <Comments review_id={review_id}/>
     </section>
+    
   );
 }

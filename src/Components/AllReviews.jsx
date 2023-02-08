@@ -13,7 +13,7 @@ export default function AllReviews() {
 
   return (
     <section>
-      <h2>All Reviews</h2>
+      <h2 className="allReviewsTitle">All Reviews</h2>
 
       <ReviewCards reviews={reviews} />
     </section>
