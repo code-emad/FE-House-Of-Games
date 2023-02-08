@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getReviews } from "../Utils/Reviews";
+import { getReviews } from "../Utils/api";
 import ReviewCards from "./ReviewCards";
 
 export default function AllReviews() {
@@ -14,6 +14,7 @@ export default function AllReviews() {
   return (
     <section>
       <h2>All Reviews</h2>
+
       <ReviewCards reviews={reviews} />
     </section>
   );

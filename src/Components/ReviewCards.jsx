@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
+
 export default function ReviewCards({ reviews }) {
+  const navigate = useNavigate()
+  const handleOnClick = (id) => {
+   navigate(`review/${id}`)  
+  }
+
   return (
     <ul>
       {reviews.map((review) => {
@@ -12,13 +20,16 @@ export default function ReviewCards({ reviews }) {
               {review.created_at.slice(0, 16).replace("T", " ")}
             </p>
             <img src={review.review_img_url} alt="pic_of_game" height="100px" />
-            <p>Review: {review.review_body}</p>
-            <p>Designer: {review.designer}</p>
             <p>Category: {review.category}</p>
             <p>Comment count: {review.comment_count}</p>
             <p>Votes: {review.votes}</p>
             <button>+</button>
             <button>-</button>
+
+            <br/>
+           
+            <button onClick={() => handleOnClick (review.review_id)} >View full review</button>
+           
           </li>
         );
       })}

@@ -7,3 +7,11 @@ export const getReviews = () => {
       return data;
     });
 };
+
+export const getReviewById = (review_id) => {
+  return axios
+    .get(`https://emads-be-project.onrender.com/api/reviews/${review_id}`)
+    .then(({ data }) => {
+      return data;
+    });
+};
