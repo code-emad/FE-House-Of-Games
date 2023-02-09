@@ -64,6 +64,7 @@ export const removeComment = (comment_id) => {
   let path = `/comments/${comment_id}`;
 
   return gamesAPI.delete(path);
+}
 
 
 export const getCategories = () => {
@@ -73,3 +74,4 @@ export const getCategories = () => {
     return data;
   });
 
+}
