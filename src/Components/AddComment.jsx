@@ -8,6 +8,7 @@ export default function AddComment({ review_id }) {
   function handleSubmit(event) {
     event.preventDefault();
 
+ 
     setDisableButton(true);
     addComment(review_id, newComment)
       .then((data) => {
@@ -21,6 +22,7 @@ export default function AddComment({ review_id }) {
       <br />
       <form onSubmit={handleSubmit}>
         <textarea
+          required
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
         ></textarea>
