@@ -16,7 +16,7 @@ export default function SingleReview() {
       getReviewById(review_id).then((review) => {
         setReview(review);
       });
-  }, [review_id,  <AddComment />]);
+  }, [review_id]);
 
   const searchedReview = !review.hasOwnProperty("review_body") ? (<p></p>) 
   : (
