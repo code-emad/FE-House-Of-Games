@@ -56,3 +56,11 @@ export const addComment = (review_id, comment) => {
       return data;
     });
 };
+
+export const getCategories = () => {
+  const path = "/categories";
+
+  return gamesAPI.get(path).then(({ data }) => {
+    return data;
+  });
+};

@@ -12,7 +12,7 @@ export default function AllReviews() {
     getReviews(category).then((reviews) => {
       setReviews(reviews);
     });
-  }, []);
+  }, [category]);
 
   return (
     <section>
