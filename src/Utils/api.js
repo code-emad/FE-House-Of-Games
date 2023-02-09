@@ -56,3 +56,10 @@ export const addComment = (review_id, comment) => {
       return data;
     });
 };
+
+export const removeComment = (comment_id) => {
+  let path = `/comments/${comment_id}`;
+
+  return gamesAPI.delete(path);
+};
+
