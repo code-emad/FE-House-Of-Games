@@ -22,7 +22,7 @@ export default function AddComment({ review_id }) {
       <br />
       <form onSubmit={handleSubmit}>
         <textarea
-        
+          required
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
         ></textarea>
