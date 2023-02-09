@@ -9,7 +9,7 @@ export default function Comments({ review_id }) {
     getCommentsById(review_id).then((comments) => {
       setComments(comments);
     });
-  }, [review_id, <AddComment />,]);
+  }, [review_id]);
 
   return (
     <section>
