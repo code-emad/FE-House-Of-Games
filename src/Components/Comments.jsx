@@ -33,7 +33,10 @@ export default function Comments({ review_id }) {
               </p>
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>
-              <DeleteComment comment_id={comment.comment_id} />
+              <DeleteComment 
+              comments={comments}
+              setComments={setComments}
+              comment_id={comment.comment_id} />
             </li>
           );
         })}
