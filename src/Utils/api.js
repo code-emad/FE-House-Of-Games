@@ -44,9 +44,9 @@ export const patchVotesById = (review_id, incVotes) => {
 };
 
 
-export const addComment = (review_id, comment) => {
+export const addComment = (review_id, comment, loggedInUser) => {
   const postBody = {
-    username: "tickle122",
+    username: loggedInUser,
     body: comment,
   };
   return axios
