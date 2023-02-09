@@ -3,6 +3,7 @@ import { getReviewById } from "../Utils/api";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Comments from './Comments'
+import Votes from './Votes'
 
 export default function SingleReview() {
   const navigate = useNavigate();
@@ -31,9 +32,7 @@ export default function SingleReview() {
       <p>Designer: {review.designer}</p>
       <p>Category: {review.category}</p>
       <p>Comment count: {review.comment_count}</p>
-      <p>Votes: {review.votes}</p>
-      <button>+</button>
-      <button>-</button>
+      <Votes votes={review.votes} review_id={review.review_id}/>
     </section>
   );
 

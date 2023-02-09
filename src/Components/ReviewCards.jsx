@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-
+import Votes from "./Votes";
 
 export default function ReviewCards({ reviews }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleOnClick = (id) => {
-   navigate(`review/${id}`)  
-  }
+    navigate(`review/${id}`);
+  };
 
   return (
     <ul>
@@ -22,14 +22,13 @@ export default function ReviewCards({ reviews }) {
             <img src={review.review_img_url} alt="pic_of_game" height="100px" />
             <p>Category: {review.category}</p>
             <p>Comment count: {review.comment_count}</p>
-            <p>Votes: {review.votes}</p>
-            <button>+</button>
-            <button>-</button>
+            <Votes votes={review.votes} review_id={review.review_id} />
 
-            <br/>
-           
-            <button onClick={() => handleOnClick (review.review_id)} >View full review</button>
-           
+            <br />
+
+            <button onClick={() => handleOnClick(review.review_id)}>
+              View full review
+            </button>
           </li>
         );
       })}
