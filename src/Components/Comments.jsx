@@ -1,6 +1,5 @@
 import { getCommentsById } from "../Utils/api";
 import { useEffect, useState } from "react";
-import AddComment from "./AddComment";
 
 export default function Comments({ review_id }) {
   const [comments, setComments] = useState([]);
@@ -14,13 +13,13 @@ export default function Comments({ review_id }) {
   return (
     <section>
       <h3 className="commentsTitle">Comments</h3>
+
       <AddComment 
       comments={comments}
       setComments={setComments}
-      
+    
       review_id={review_id} />
       <ul>
-        
         {comments.map((comment) => {
           return (
             <li key={comment.comment_id}>
