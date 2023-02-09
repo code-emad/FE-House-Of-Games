@@ -4,14 +4,22 @@ const gamesAPI = axios.create({
   baseURL: "https://emads-be-project.onrender.com/api",
 });
 
-export const getReviews = (category) => {
-  let path = "/reviews";
-  if (category) {
-    path += `?category=${category}`;
-  }
-  return gamesAPI.get(path).then(({ data }) => {
+export const getReviews = (category, sort_by, order) => {
+   let path = "/reviews";
+  // if (category) {
+  //   path += `?category=${category}`;
+  // }
+  return gamesAPI
+  .get(path, {
+    params: {
+      category: category,
+      sort_by: sort_by,
+      order: order
+    },
+  }).then(({ data }) => {
     return data;
-  });
+  })
+  .catch(err => console.error(err))
 };
 
 export const getReviewById = (review_id) => {
