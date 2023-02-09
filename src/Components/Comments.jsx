@@ -11,7 +11,6 @@ export default function Comments({ review_id }) {
     });
   }, [review_id]);
 
-  console.log(comments, "from comments")
   return (
     <section>
       <h3 className="commentsTitle">Comments</h3>
