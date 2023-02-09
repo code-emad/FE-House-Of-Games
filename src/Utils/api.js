@@ -1,11 +1,17 @@
 import axios from "axios";
 
-export const getReviews = () => {
-  return axios
-    .get("https://emads-be-project.onrender.com/api/reviews/")
-    .then(({ data }) => {
-      return data;
-    });
+const gamesAPI = axios.create({
+  baseURL: "https://emads-be-project.onrender.com/api",
+});
+
+export const getReviews = (category) => {
+  let path = "/reviews";
+  if (category) {
+    path += `?category=${category}`;
+  }
+  return gamesAPI.get(path).then(({ data }) => {
+    return data;
+  });
 };
 
 export const getReviewById = (review_id) => {
