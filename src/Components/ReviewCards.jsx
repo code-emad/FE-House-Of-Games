@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Votes from "./Votes";
 
+
 export default function ReviewCards({ reviews }) {
   const navigate = useNavigate();
   const handleOnClick = (id) => {

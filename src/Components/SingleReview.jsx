@@ -3,7 +3,6 @@ import { getReviewById } from "../Utils/api";
 import { useParams } from "react-router-dom";
 import Comments from './Comments'
 import Votes from './Votes'
-import AddComment from "./AddComment";
 
 export default function SingleReview() {
   const [review, setReview] = useState({});
@@ -14,7 +13,7 @@ export default function SingleReview() {
       getReviewById(review_id).then((review) => {
         setReview(review);
       });
-  }, [review_id,  <AddComment />]);
+  }, [review_id]);
 
   const searchedReview = !review.hasOwnProperty("review_body") ? (
     <p></p>

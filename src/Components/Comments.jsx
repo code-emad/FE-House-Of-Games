@@ -10,12 +10,19 @@ export default function Comments({ review_id }) {
     getCommentsById(review_id).then((comments) => {
       setComments(comments);
     });
-  }, [review_id, <AddComment />, <DeleteComment />]);
+
+  }, [review_id]);
+
 
   return (
     <section>
       <h3 className="commentsTitle">Comments</h3>
-      <AddComment review_id={review_id} />
+
+      <AddComment 
+      comments={comments}
+      setComments={setComments}
+    
+      review_id={review_id} />
       <ul>
         {comments.map((comment) => {
           return (

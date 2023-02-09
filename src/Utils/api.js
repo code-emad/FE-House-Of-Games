@@ -36,11 +36,13 @@ export const patchVotesById = (review_id, incVotes) => {
   const patchBody = {
     inc_votes: incVotes,
   };
-  return axios.patch(
+  return axios
+  .patch(
     `https://emads-be-project.onrender.com/api/reviews/${review_id}`,
     patchBody
   );
 };
+
 
 export const addComment = (review_id, comment) => {
   const postBody = {
@@ -57,9 +59,17 @@ export const addComment = (review_id, comment) => {
     });
 };
 
+
 export const removeComment = (comment_id) => {
   let path = `/comments/${comment_id}`;
 
   return gamesAPI.delete(path);
-};
+
+
+export const getCategories = () => {
+  const path = "/categories";
+
+  return gamesAPI.get(path).then(({ data }) => {
+    return data;
+  });
 
