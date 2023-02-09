@@ -5,7 +5,7 @@ export default function Categories({ categories }) {
     <section>
       {categories.map((category) => {
         return (
-          <li>
+          <li key={category.slug}>
             <Link to={`/reviews?category=${category.slug}`}>
               {category.slug}
             </Link>

@@ -1,5 +1,6 @@
 import { getCommentsById } from "../Utils/api";
 import { useEffect, useState } from "react";
+import AddComment from "./AddComment";
 
 export default function Comments({ review_id }) {
   const [comments, setComments] = useState([]);
