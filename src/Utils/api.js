@@ -6,9 +6,7 @@ const gamesAPI = axios.create({
 
 export const getReviews = (category, sort_by, order) => {
    let path = "/reviews";
-  // if (category) {
-  //   path += `?category=${category}`;
-  // }
+
   return gamesAPI
   .get(path, {
     params: {
