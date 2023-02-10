@@ -10,6 +10,7 @@ import SingleReview from "./Components/SingleReview";
 import Votes from "./Components/Votes";
 import Nav from "./Components/Nav";
 import Home from "./Components/Home";
+import ErrorPage from "./Components/ErrorPage";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <Route path="/" element={<Home />}> </Route>
         <Route path="/reviews" element={<AllReviews />}> </Route>
         <Route path="/reviews/review/:review_id" element={<SingleReview />}></Route>
-        <Route path="/test" element={<Votes/>}></Route>
+        <Route path="*" element={<ErrorPage/>}></Route>
       </Routes>
       </UserProvider>
     </div>

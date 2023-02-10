@@ -7,12 +7,14 @@ import Votes from './Votes'
 export default function SingleReview() {
   const [review, setReview] = useState({});
   const { review_id } = useParams();
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     if (review_id)
       getReviewById(review_id).then((review) => {
         setReview(review);
-      });
+      })
+      .catch(err => setError(err))
   }, [review_id]);
 
   const searchedReview = !review.hasOwnProperty("review_body") ? (
@@ -34,6 +36,8 @@ export default function SingleReview() {
       <Votes votes={review.votes} review_id={review.review_id} />
     </section>
   );
+
+  if (error) {return <p>{error.response.data}</p>}
 
   return (
     <section>

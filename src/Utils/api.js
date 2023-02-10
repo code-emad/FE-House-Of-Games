@@ -17,7 +17,6 @@ export const getReviews = (category, sort_by, order) => {
   }).then(({ data }) => {
     return data;
   })
-  .catch(err => console.error(err))
 };
 
 export const getReviewById = (review_id) => {
@@ -25,7 +24,7 @@ export const getReviewById = (review_id) => {
     .get(`https://emads-be-project.onrender.com/api/reviews/${review_id}`)
     .then(({ data }) => {
       return data;
-    });
+    })
 };
 
 export const getCommentsById = (review_id) => {
@@ -35,7 +34,7 @@ export const getCommentsById = (review_id) => {
     )
     .then(({ data }) => {
       return data;
-    });
+    })
 };
 
 export const patchVotesById = (review_id, incVotes) => {
@@ -46,7 +45,7 @@ export const patchVotesById = (review_id, incVotes) => {
   .patch(
     `https://emads-be-project.onrender.com/api/reviews/${review_id}`,
     patchBody
-  );
+  )
 };
 
 
@@ -62,7 +61,7 @@ export const addComment = (review_id, comment, loggedInUser) => {
     )
     .then(({ data }) => {
       return data;
-    });
+    })
 };
 
 
@@ -70,6 +69,7 @@ export const removeComment = (comment_id) => {
   let path = `/comments/${comment_id}`;
 
   return gamesAPI.delete(path);
+  
 }
 
 
@@ -78,6 +78,6 @@ export const getCategories = () => {
 
   return gamesAPI.get(path).then(({ data }) => {
     return data;
-  });
+  })
 
 }
