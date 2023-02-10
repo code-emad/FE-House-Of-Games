@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import {UserProvider} from './Components/UserContext'
 
 
 //Components
@@ -13,6 +14,7 @@ import Home from "./Components/Home";
 function App() {
   return (
     <div className="App">
+      <UserProvider>
       <Header className="title"/>
       <Nav />
       <Routes>
@@ -21,6 +23,7 @@ function App() {
         <Route path="/reviews/review/:review_id" element={<SingleReview />}></Route>
         <Route path="/test" element={<Votes/>}></Route>
       </Routes>
+      </UserProvider>
     </div>
   );
 }

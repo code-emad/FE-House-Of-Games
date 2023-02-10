@@ -1,6 +1,7 @@
 import { getCommentsById } from "../Utils/api";
 import { useEffect, useState } from "react";
 import AddComment from "./AddComment";
+import DeleteComment from "./DeleteComment.jsx";
 
 export default function Comments({ review_id }) {
   const [comments, setComments] = useState([]);
@@ -9,7 +10,9 @@ export default function Comments({ review_id }) {
     getCommentsById(review_id).then((comments) => {
       setComments(comments);
     });
+
   }, [review_id]);
+
 
   return (
     <section>
@@ -30,6 +33,10 @@ export default function Comments({ review_id }) {
               </p>
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>
+              <DeleteComment 
+              comments={comments}
+              setComments={setComments}
+              comment_id={comment.comment_id} />
             </li>
           );
         })}

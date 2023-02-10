@@ -7,6 +7,7 @@ export default function Votes({ votes, review_id }) {
   const incVotes = () => {
     setVoteChange((currChange) => currChange + 1);
     patchVotesById(review_id, 1);
+
   };
 
   const decVotes = () => {

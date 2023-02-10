@@ -44,9 +44,9 @@ export const patchVotesById = (review_id, incVotes) => {
 };
 
 
-export const addComment = (review_id, comment) => {
+export const addComment = (review_id, comment, loggedInUser) => {
   const postBody = {
-    username: "tickle122",
+    username: loggedInUser,
     body: comment,
   };
   return axios
@@ -59,11 +59,19 @@ export const addComment = (review_id, comment) => {
     });
 };
 
+
+export const removeComment = (comment_id) => {
+  let path = `/comments/${comment_id}`;
+
+  return gamesAPI.delete(path);
+}
+
+
 export const getCategories = () => {
   const path = "/categories";
 
   return gamesAPI.get(path).then(({ data }) => {
     return data;
   });
-};
 
+}
