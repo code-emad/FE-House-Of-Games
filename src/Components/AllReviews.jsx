@@ -16,9 +16,11 @@ export default function AllReviews() {
     });
   }, [category, sortBy, order]);
 
+
+  console.log(category)
   return (
     <section>
-      <h2 className="allReviewsTitle">All Reviews</h2>
+      <h2 className="allReviewsTitle">{category ? category : 'All Reviews'}</h2>
       <p>Sort by:</p>
       <button
         onClick={() => {
