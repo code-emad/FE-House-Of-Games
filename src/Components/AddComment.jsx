@@ -29,7 +29,7 @@ export default function AddComment({ review_id, comments, setComments }) {
         setNewComment("");
         setDisableButton(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err, "addcomment"));
   }
   return (
     <section>

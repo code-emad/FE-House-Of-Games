@@ -5,14 +5,17 @@ import DeleteComment from "./DeleteComment.jsx";
 
 export default function Comments({ review_id }) {
   const [comments, setComments] = useState([]);
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     getCommentsById(review_id).then((comments) => {
       setComments(comments);
-    });
+    })
+    .catch((err) => {setError(err)})
 
   }, [review_id]);
 
+  if (error) {return <p>{error.response.data.msg}</p>}
 
   return (
     <section>

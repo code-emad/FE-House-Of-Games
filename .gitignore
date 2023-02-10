@@ -24,3 +24,5 @@ yarn-error.log*
 
 # scrap file
 src/Utils/scrap.jsx
+# Local Netlify folder
+.netlify

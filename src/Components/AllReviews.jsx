@@ -9,15 +9,17 @@ export default function AllReviews() {
   const category = searchParams.get("category");
   const [sortBy, setSortBy] = useState("created_at");
   const [order, setOrder] = useState("Desc");
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     getReviews(category, sortBy, order).then((reviews) => {
       setReviews(reviews);
-    });
-  }, [category, sortBy, order]);
+    })
+    .catch(err => console.log(err, 'allrevs'))
+  }, [category, sortBy, order])
 
+  if (error) {return <p>{error.response.data}</p>}
 
-  console.log(category)
   return (
     <section>
       <h2 className="allReviewsTitle">{category ? category : 'All Reviews'}</h2>
