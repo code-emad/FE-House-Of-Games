@@ -14,7 +14,7 @@ export default function SingleReview() {
       getReviewById(review_id).then((review) => {
         setReview(review);
       })
-      .catch(err => setError(err))
+      .catch(err => setError(err));
   }, [review_id]);
 
   const searchedReview = !review.hasOwnProperty("review_body") ? (
@@ -37,7 +37,8 @@ export default function SingleReview() {
     </section>
   );
 
-  if (error) {return <p>{error.response.data}</p>}
+  if (error) {return <p>{error.response.data.msg}</p>}
+
 
   return (
     <section>

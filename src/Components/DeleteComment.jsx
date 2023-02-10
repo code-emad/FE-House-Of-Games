@@ -12,6 +12,7 @@ export default function DeleteFunction({ comment_id, comments, setComments}) {
     //action request
     removeComment(comment_id);
     setDisableDelete(false)
+    .catch(err => console.log(err))
   };
 
   return (

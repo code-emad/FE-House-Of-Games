@@ -15,7 +15,7 @@ export default function AllReviews() {
     getReviews(category, sortBy, order).then((reviews) => {
       setReviews(reviews);
     })
-    .catch(err => setError(err))
+    .catch(err => console.log(err, 'allrevs'))
   }, [category, sortBy, order])
 
   if (error) {return <p>{error.response.data}</p>}

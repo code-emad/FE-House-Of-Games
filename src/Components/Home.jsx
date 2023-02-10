@@ -9,7 +9,8 @@ export default function Home() {
   useEffect(() => {
     getCategories().then((data) => {
       setCategories(data);
-    });
+    })
+    .catch(err => console.log(err))
   }, []);
 
   return (
