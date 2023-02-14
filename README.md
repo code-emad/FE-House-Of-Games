@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# House of Games (frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Purpose
+The goal of this frontend project was to build a interface that allows users to visualise and interact with the House of Games API (found [here](https://github.com/code-emad/House-of-Games)). 
 
-## Available Scripts
+The application allows users to view a reddit like site where users can view reviews of board games. The user can upvote/downvote at the press of a button, view comments attached, add a new comment to the review, delete a comment, filter reviews by category and sort by date/comment count/vote count. Further functionality is be added a later date. 
 
-In the project directory, you can run:
+A link to the project can be found [here](https://emads-first-fe-proj-houseofgames.netlify.app/). Please note that at present minimal styling has been completed as the main focus has been functionality. 
 
-### `npm start`
+## Setup
+In order to make a local clone of this project, within your terminal you will to run `git clone https://github.com/code-emad/NC-Games.git`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Once the files have been cloned, you will need to change directory into the project directory and run `npm install` which will install the dependencies listed within the package.json file. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`npm start` will allow you to run the app in development mode. Within your browser, open [http://localhost:3000](http://localhost:3000) to view it.
 
-### `npm test`
+## Dependencies
+| Package     | Description                                                               |
+| ----------- | ------------------------------------------------------------------------- |
+| Axios  | JavaScript library used to make HTTP requests from Node.js|
+| React     | JavaScript library for building user interfaces based on components|
+| React-dom       | Provides DOM-specific methods that can be used within your app|
+| React-router-dom | Contains bindings for using React Router in web applications|
+| React-scripts    | Includes scripts and configuration used by React|
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Minimum Versions
+Node v19.1.0 

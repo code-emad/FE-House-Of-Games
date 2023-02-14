@@ -1,21 +1,23 @@
 .App {
   text-align: center;
+  
 }
 
-@font-face {
-  font-family: "Bangers";
-  src: url('https://fonts.googleapis.com/css?family=Bangers');
+* {
+  background-color: #00a591;
+  font-family: 'Bangers', cursive;
 }
+
+
 
 .title {
-  
   font-size: 40px;
   font-weight: 600;
-  background-image: linear-gradient(to left, #230574, #c1a9da);
+  background-image: linear-gradient(to left, #eafffd, #e6dec75d);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  --box-border--border: linear-gradient(105deg, #230574 0%, #c1a9da 100%);
+  --box-border--border: linear-gradient(105deg, #eafffd 0%, #e6dec75d 100%);
   
   /*border found online */
   /* classic 9-slide-scaling with 2px border 4px rounded corners. change `rx` and `ry` parameters to adjust border-radius */
@@ -35,7 +37,7 @@
   width: 90%;
   max-width: 30ch;
   border-radius: 7px;
-  font-family:'Bangers, Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Bangers', cursive;
 }
 
 .title::before {
@@ -83,4 +85,88 @@ li {
 
 .commentsTitle {
   text-decoration: underline;
+}
+
+nav {
+ padding: 1em;
+}
+
+nav a {
+  font-size: large;
+  position: relative;
+  width: 33.333%;
+  text-align: center;
+  color: #e6caca;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: 0.2s ease color;
+}
+
+nav a:before,
+nav a:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s ease transform;
+}
+
+nav a:before {
+  top: 0;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+}
+
+nav a:after {
+  top: 5px;
+  left: 18px;
+  width: 4px;
+  height: 4px;
+}
+
+nav a:nth-child(1):before {
+  background-color: yellow;
+}
+
+nav a:nth-child(1):after {
+  background-color: red;
+}
+
+nav a:nth-child(2):before {
+  background-color: #00e2ff;
+}
+
+nav a:nth-child(2):after {
+  background-color: #89ff00;
+}
+
+#indicator {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.2s ease left;
+}
+
+nav a:hover {
+  color: rgb(255, 238, 0);
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  transform: scale(2);
+}
+
+nav a:nth-child(1):hover ~ #indicator {
+  background: linear-gradient(130deg, yellow, red);
+}
+
+nav a:nth-child(2):hover ~ #indicator {
+  left: 34%;
+  background: linear-gradient(130deg, #00e2ff, #89ff00);
 }
