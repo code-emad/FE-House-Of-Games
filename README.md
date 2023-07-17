@@ -8,7 +8,7 @@ The application allows users to view a reddit like site where users can view rev
 A link to the project can be found [here](https://emads-first-fe-proj-houseofgames.netlify.app/). Please note that at present minimal styling has been completed as the main focus has been functionality. 
 
 ## Setup
-In order to make a local clone of this project, within your terminal you will to run `git clone https://github.com/code-emad/NC-Games.git`
+In order to make a local clone of this project, within your terminal you will need to run `git clone https://github.com/code-emad/NC-Games.git`
 
 Once the files have been cloned, you will need to change directory into the project directory and run `npm install` which will install the dependencies listed within the package.json file. 
 
