@@ -7,10 +7,11 @@ export default function Home() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    getCategories().then((data) => {
-      setCategories(data);
-    })
-    .catch(err => console.log(err))
+    getCategories()
+      .then((data) => {
+        setCategories(data);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   console.log(categories.length);
@@ -19,10 +20,18 @@ export default function Home() {
     <section>
       <h2 className="home">Home</h2>
       <ul>
-        <li>
-          <Link to="/reviews">All Reviews</Link>
-        </li>
-        {categories.length < 1 ? <p>loading...</p> : <Categories categories={categories} />}
+        {categories.length < 1 ? (
+          <li>
+            <p>loading...</p>
+          </li>
+        ) : (
+          <div>
+            <li>
+              <Link to="/reviews">All Reviews</Link>
+            </li>
+            <Categories categories={categories} />
+          </div>
+        )}
       </ul>
     </section>
   );
