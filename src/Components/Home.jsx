@@ -14,8 +14,6 @@ export default function Home() {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(categories.length);
-
   return (
     <section>
       <h2 className="home">Home</h2>
