@@ -13,14 +13,16 @@ export default function Home() {
     .catch(err => console.log(err))
   }, []);
 
+  console.log(categories.length);
+
   return (
     <section>
-      <h2>Home</h2>
+      <h2 className="home">Home</h2>
       <ul>
         <li>
           <Link to="/reviews">All Reviews</Link>
         </li>
-        <Categories categories={categories} />
+        {categories.length < 1 ? <p>loading...</p> : <Categories categories={categories} />}
       </ul>
     </section>
   );
